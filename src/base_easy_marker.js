@@ -646,7 +646,7 @@ class EasyMarker {
    */
   handleTouchStart(e) {
     if (this.selectStatus === SelectStatus.FINISH && this.menu.isShow && this.menu.type !== MenuType.HIGHLIGHT) {
-      const position = this.getTouchRelativePosition(e)
+      const position = this.getTouchRelativePosition(e) // 获取点击位置，相对于容器的坐标
       const startCursorRegion = this.cursor.start.inRegion(position)
       const endCursorRegion = this.cursor.end.inRegion(position)
       if (startCursorRegion.inRegion && endCursorRegion.inRegion) {
